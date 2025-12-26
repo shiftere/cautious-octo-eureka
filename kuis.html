@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuis Interaktif</title>
+    <style>
+    body { font-family: Arial; text-align: center; padding: 20px; }
+    button { padding: 10px; margin-top: 10px; }
+  </style>
+
+</head>
+
+<body>
+    <h2>Kuis Sederhana</h2>
+  <p>Siapa pencipta bahasa JavaScript?</p>
+  <input type="text" id="jawaban" placeholder="Ketik jawabanmu">
+  <button onclick="periksa()">Periksa Jawaban</button>
+  <p id="hasil"></p>
+
+  <script>
+    function periksa() {
+      let j = document.getElementById("jawaban").value.toLowerCase();
+      if (j === "brendan eich") {
+        document.getElementById("hasil").innerHTML = "Benar 🎉";
+      } else {
+        document.getElementById("hasil").innerHTML = "Salah 😅 Coba lagi!";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
