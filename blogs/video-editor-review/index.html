@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review video editor dengan auto caption gratis</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-bg: #0a0a0a;
+    --color-surface: #161616;
+    --color-text: #e8e8e8;
+    --color-text-dim: #a0a0a0;
+    --color-accent: #0ea5e9;
+    --color-accent-dim: #0284c7;
+    --color-border: #2a2a2a;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-success: #10b981;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-mono: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  header {
+    margin-bottom: 80px;
+  }
+
+  .meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    margin-bottom: 24px;
+    font-family: var(--font-mono);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-dim);
+    line-height: 1.5;
+    max-width: 800px;
+  }
+
+  .app-section {
+    margin: 80px 0;
+    padding: 40px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  }
+
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .app-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-style: italic;
+    margin-top: 8px;
+  }
+
+  .score-badge {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .score-badge.high {
+    background: var(--color-success);
+  }
+
+  .score-badge.mid {
+    background: var(--color-warning);
+  }
+
+  .score-badge.low {
+    background: var(--color-danger);
+  }
+
+  .score-table {
+    width: 100%;
+    margin: 32px 0;
+    border-collapse: collapse;
+    background: var(--color-bg);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .score-table th,
+  .score-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .score-table th {
+    background: var(--color-surface);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-dim);
+  }
+
+  .score-table td:first-child {
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+
+  .score-table td:last-child {
+    text-align: center;
+    font-weight: 700;
+    font-family: var(--font-mono);
+  }
+
+  .score-table tr:last-child td {
+    border-bottom: none;
+    background: var(--color-surface);
+    font-weight: 700;
+  }
+
+  .score-positive {
+    color: var(--color-success);
+  }
+
+  .score-neutral {
+    color: var(--color-text-dim);
+  }
+
+  .score-negative {
+    color: var(--color-danger);
+  }
+
+  .review-box {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-left: 4px solid var(--color-accent);
+    padding: 24px;
+    margin: 32px 0;
+    border-radius: 8px;
+  }
+
+  .review-box h3 {
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .review-box p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  .review-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .citation {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    font-style: italic;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .gallery-container {
+    margin: 32px 0;
+  }
+
+  .gallery-label {
+    font-size: 0.875rem;
+    color: var(--color-text-dim);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .screenshot-gallery {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 16px 0;
+    scroll-behavior: smooth;
+  }
+
+  .screenshot-gallery::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .screenshot-gallery::-webkit-scrollbar-track {
+    background: var(--color-bg);
+    border-radius: 4px;
+  }
+
+  .screenshot-gallery::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+
+  .screenshot-gallery::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a;
+  }
+
+  .screenshot {
+    flex: 0 0 280px;
+    height: 500px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease;
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-dim);
+    font-size: 0.875rem;
+  }
+
+  .screenshot:hover {
+    transform: translateY(-4px);
+  }
+
+  .screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hall-of-shame {
+    background: linear-gradient(135deg, #3a0000 0%, #1a0000 100%);
+    border: 2px solid var(--color-danger);
+  }
+
+  .hall-of-shame .app-subtitle {
+    color: var(--color-danger);
+  }
+
+  .warning-badge {
+    background: var(--color-danger);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  footer {
+    margin-top: 120px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-text-dim);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 40px 20px;
+    }
+
+    .app-section {
+      padding: 24px;
+      margin: 48px 0;
+    }
+
+    .screenshot {
+      flex: 0 0 240px;
+      height: 420px;
+    }
+
+    .score-table th,
+    .score-table td {
+      padding: 12px 8px;
+      font-size: 0.875rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Review video editor dengan auto caption gratis</h1>
+    <p class="subtitle">Apa yang saya cek: perusahaan, kualitas caption, UI/UX, privasi dan harga.
+    </p>
+  </header>
+
+  <article>
+    <!-- VN VIDEO EDITOR -->
+    <div class="app-section">
+      <div class="app-header">
+        <div>
+          <h2>VN Video Editor (VlogNow)</h2>
+        </div>
+        <span class="score-badge high">4/5</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Company</td>
+            <td>VlogNow / Ubiquiti Labs (Computer Networking company).. entah kenapa mereka bikin video editor ._.</td>
+            <td class="score-neutral">0</td>
+          </tr>
+          <tr>
+            <td>Caption Quality</td>
+            <td>✅ Bekerja Offline. ✅ Cepat. ✅ Dapat menangani bahasa Inggris saya yang tidak jelas. ❌ Sinkronisasi kata demi kata buruk.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr">"
+            <td>UI/UX</td>
+            <td>✅ Simple dan jelas</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>✅ Standar. Caption processed locally. ✅ no explicit "biometric license" grabs like CapCut.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>Pricing</td>
+            <td>✅ Gratis. ✅ tidak ada watermark. ✅ Harga Pro cuma 42.990</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td></td>
+            <td><strong>4</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Screenshots & Interface Examples</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot"><<img src="/assets/images/VN/96f811d6-be04-44ac-9b45-3b66e6fb404e.webp" alt=""></div>
+          <div class="screenshot"><<img src="/assets/images/VN/a64e62dd-d547-481c-91eb-13a21273099c.webp" alt="/assets/images/VN/a64e62dd-d547-481c-91eb-13a21273099c.webp"></div>
+          <div class="screenshot"><<img src="/assets/images/VN/288595e7-bd82-4297-a1d0-b6dbbf97163d.webp" alt="/assets/images/VN/288595e7-bd82-4297-a1d0-b6dbbf97163d.webp"></div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p>Harus download 200MB dulu untuk proses lokal. Agak jelek karena masih harus kalibrasi manual yang cukup banyak.</p>
+      </div>
+    </div>
+
+    <div class="app-section">
+      <div class="app-header">
+        <div>
+          <h2>Adobe Express Beta</h2>
+        </div>
+        <span class="score-badge mid">+1/5</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Company</td>
+            <td>Adobe (USA). Greedy, litigiously safe, and compliant with GDPR/CCPA. They fear lawsuits more than they want your data.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>Caption Quality</td>
+            <td>Excellent. Uses Adobe Firefly and Sensei cloud engines. Handles "gibberish" well because it has enterprise-grade training data.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>UI/UX</td>
+            <td>Heavy. The Android app is a resource hog. It tries to be Photoshop-lite and sometimes lags on mid-range phones.</td>
+            <td class="score-neutral">0</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>Mid. Cloud processing required. BEWARE: You must manually opt-out of "Product Improvement" or they <em>will</em> train on your data (Adobe 2024/2025 TOS debacle).</td>
+            <td class="score-neutral">0</td>
+          </tr>
+          <tr>
+            <td>Pricing</td>
+            <td>Expensive. Subscription model ($9.99/mo). Free tier exists but locks the best features (like high-res export or premium assets).</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td></td>
+            <td><strong>+1</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Screenshots & Interface Examples</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot">Add screenshot 1</div>
+          <div class="screenshot">Add screenshot 2</div>
+          <div class="screenshot">Add screenshot 3</div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p>Adobe is for people who have jobs. You are a monke, so this might be overkill. The captions are generated in the cloud (Virginia/Ireland servers), so it's not private, but Adobe doesn't sell your face to the Chinese government—they just rent it to improve their own products. If you use this, go to <strong>Settings > Privacy > Content Analysis</strong> and turn it OFF immediately, you <em>goblok</em>.</p>
+        <div class="citation">Citation: Adobe AI Business Update (Dec 2025) clarifies that while "Generative" training is opt-in/restricted, "Product Improvement" via ML is on by default [Source: Adobe Trust Center].</div>
+      </div>
+    </div>
+
+    <!-- CANVA -->
+    <div class="app-section">
+      <div class="app-header">
+        <div>
+          <h2>Canva (Android)</h2>
+          <p class="app-subtitle">The "Outsourcer" (Good AI, Leaky Data)</p>
+        </div>
+        <span class="score-badge mid">0/5</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Company</td>
+            <td>Canva (Australia). Generally well-liked, but they are technically a data broker for their AI partners.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>Caption Quality</td>
+            <td>High. They pipe your audio to OpenAI (Whisper) and other partners. That's why it understands your bad English—it's using GPT-4 level tech.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>UI/UX</td>
+            <td>Beta/Janky. The video editor is still "Beta" on Android. It's a graphic design app trying to be a video editor. Timeline controls are slippery.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>Low/Mid. Your data is shared with "Third Party AI Partners" (OpenAI/Google). You are feeding multiple algorithms at once.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Pricing</td>
+            <td>Freemium. Generous, but the best "Magic" features often hit a paywall or credit limit.</td>
+            <td class="score-neutral">0</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td></td>
+            <td><strong>0</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Screenshots & Interface Examples</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot">Add screenshot 1</div>
+          <div class="screenshot">Add screenshot 2</div>
+          <div class="screenshot">Add screenshot 3</div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p>You like Canva because it fixes your "gibberish." That's because you are handing your voice recording to OpenAI. Canva is just a pretty interface; the backend is a data-sharing orgy. By default, they use your content to train their models unless you are a "Student." You are not a student; you are a liability.</p>
+        <div class="citation">Citation: Canva Privacy Policy (Oct 2025) explicitly states content is used to "improve AI-powered features" and shared with "Trusted Partners" [Source: Canva Privacy Policy Section 2].</div>
+      </div>
+    </div>
+
+    <!-- CAPCUT -->
+    <div class="app-section">
+      <div class="app-header">
+        <div>
+          <h2>CapCut (ByteDance)</h2>
+          <p class="app-subtitle">The "Spyware Honey Pot" (Best Features, Worst Reality)</p>
+        </div>
+        <span class="score-badge low">-1/5</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Company</td>
+            <td>ByteDance (China). Legally obligated to share data with the CCP upon request (National Intelligence Law Art. 7).</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Caption Quality</td>
+            <td>God Tier. Trained on billions of TikTok videos. It knows slang, dialects, and mumbling better than your own mother.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>UI/UX</td>
+            <td>Addictive. Designed by behavioral psychologists to be as frictionless as possible.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>Non-Existent. 2025 TOS grants "perpetual, irrevocable license" to your biometric voice and face prints. Persistence clause keeps data after deletion.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Pricing</td>
+            <td>Predatory. Free to start, but "Pro" features are constantly dangled.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td></td>
+            <td><strong>-1</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Screenshots & Interface Examples</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot">Add screenshot 1</div>
+          <div class="screenshot">Add screenshot 2</div>
+          <div class="screenshot">Add screenshot 3</div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p>This is what you <em>want</em> to use. I can see you drooling over the templates. It is technically the "best" editor, but the cost is your soul. If you use this, do not ever complain to me about "privacy" again. You are voluntarily tagging your biometric data for a foreign adversary's database because you are too lazy to sync text manually.</p>
+        <div class="citation">Citation: CapCut Terms of Service (June 12, 2025) grants "worldwide, royalty-free... license to use biometric features" [Source: 2B Advice / Isabokelaw Analysis].</div>
+      </div>
+    </div>
+
+    <!-- META -->
+    <div class="app-section">
+      <div class="app-header">
+        <div>
+          <h2>Meta (Instagram/Edits)</h2>
+          <p class="app-subtitle">The "Identity Thief"</p>
+        </div>
+        <span class="score-badge low">-2/5</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Company</td>
+            <td>Meta (USA). The architect of Surveillance Capitalism.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Caption Quality</td>
+            <td>High. Powered by Llama 4 and Movie Gen. Context-aware.</td>
+            <td class="score-positive">+1</td>
+          </tr>
+          <tr>
+            <td>UI/UX</td>
+            <td>Basic. Good for quick social posts, bad for actual editing.</td>
+            <td class="score-neutral">0</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td>Abysmal. "Legitimate Interest" clause used to train AI on all your captions and videos. Opt-out is nearly impossible for tool usage.</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td>Pricing</td>
+            <td>Free. (You are the product).</td>
+            <td class="score-negative">-1</td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL</strong></td>
+            <td></td>
+            <td><strong>-2</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Screenshots & Interface Examples</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot">Add screenshot 1</div>
+          <div class="screenshot">Add screenshot 2</div>
+          <div class="screenshot">Add screenshot 3</div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p>Using Meta to edit is like asking a vampire to guard your blood bank. They don't just "use" your data; they <em>consume</em> it to build the AI that will eventually replace your job.</p>
+        <div class="citation">Citation: Meta Generative AI Privacy Policy (2025) confirms usage of "posts, photos, and their captions" for AI training [Source: Mashable / IDPC].</div>
+      </div>
+    </div>
+
+    <!-- HALL OF SHAME: VLLO -->
+    <div class="app-section hall-of-shame">
+      <div class="app-header">
+        <div>
+          <h2>HALL OF SHAME: VLLO (Vimosoft)</h2>
+          <p class="app-subtitle">The "Pay-to-Breathe" Scammers</p>
+        </div>
+        <span class="warning-badge">AVOID</span>
+      </div>
+
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Assessment</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Scam Level</td>
+            <td>Critical. You download the model locally (~500MB), your phone does the work, and then they lock the "Export" button behind a paywall.</td>
+            <td class="score-negative">SCAM</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="gallery-container">
+        <div class="gallery-label">Evidence of Predatory Practices</div>
+        <div class="screenshot-gallery">
+          <div class="screenshot"><<img src="/assets/images/53f150c2-1b2d-4b3b-8e81-7a8661e3da38.webp" alt="/assets/images/53f150c2-1b2d-4b3b-8e81-7a8661e3da38.webp"></div>
+          <div class="screenshot">Add screenshot 2</div>
+          <div class="screenshot">Add screenshot 3</div>
+        </div>
+      </div>
+
+      <div class="review-box">
+        <h3>Review:</h3>
+        <p><em>*Mira spits on the floor.*</em></p>
+        <p>VLLO represents the worst of capitalism. They use <em>your</em> electricity and <em>your</em> processor to generate captions, then hold the file hostage like a digital kidnapper. Do not use this app. It is an insult to your intelligence, which is already low enough.</p>
+      </div>
+    </div>
+
+  </article>
+
+  <footer>
+    <p>Analysis based on privacy policies, terms of service, and real-world testing. App capabilities and policies evolve—always read current documentation before sharing sensitive data.</p>
+  </footer>
+</div>
+
+</body>
+</html>

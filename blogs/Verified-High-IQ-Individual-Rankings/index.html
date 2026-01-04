@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Intelligence Registry | Verified High-IQ Rankings</title>
+    <meta name="description" content="International registry of verified high-IQ individuals. Peer-reviewed psychometric assessments using advanced cognitive testing protocols. Established 2016.">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-weight: 700;
+            color: #1a365d;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        header {
+            background: #1a365d;
+            color: white;
+            padding: 2rem 0;
+            border-bottom: 4px solid #2563eb;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .seal {
+            width: 60px;
+            height: 60px;
+            border: 3px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .site-title {
+            font-size: 28px;
+            margin-bottom: 0.25rem;
+        }
+
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: rgba(255,255,255,0.3);
+        }
+
+        nav {
+            background: #f7fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.8rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #f7fafc, #ffffff);
+            padding: 3rem 0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-meta {
+            color: #4a5568;
+            font-size: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            max-width: 800px;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #4a5568;
+        }
+
+        .badge-icon {
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        main {
+            padding: 4rem 0;
+        }
+
+        .ranking-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .ranking-header h2 {
+            font-size: 36px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ranking-header p {
+            color: #4a5568;
+            font-size: 15px;
+        }
+
+        .profile {
+            margin-bottom: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .profile:last-child {
+            border-bottom: none;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            background: #1a365d;
+            color: white;
+            padding: 0.3rem 1rem;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border: 1px solid #e2e8f0;
+        }
+
+        .profile-meta h3 {
+            font-size: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .iq-score {
+            font-size: 48px;
+            color: #2563eb;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .location {
+            color: #4a5568;
+            font-size: 16px;
+            margin-bottom: 1.5rem;
+        }
+
+        .verification-box {
+            background: #f7fafc;
+            padding: 1rem;
+            border-left: 3px solid #2563eb;
+            margin-top: 1.5rem;
+        }
+
+        .verification-box strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a365d;
+        }
+
+        .verification-box p {
+            font-size: 14px;
+            color: #4a5568;
+            margin: 0.3rem 0;
+        }
+
+        .bio-section {
+            margin-bottom: 2rem;
+        }
+
+        .bio-section h4 {
+            font-size: 22px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bio-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.7rem;
+        }
+
+        .achievements li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #1a365d;
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .site-title {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="seal">GIR</div>
+                    <div>
+                        <h1 class="site-title">Global Intelligence Registry</h1>
+                        <p class="tagline" data-lang="en">International Psychometric Verification Institute</p>
+                        <p class="tagline hidden" data-lang="id">Institut Verifikasi Psikometrik Internasional</p>
+                        <p class="tagline hidden" data-lang="zh">国际心理测量验证研究所</p>
+                        <p class="tagline hidden" data-lang="ko">국제 심리측정 검증 연구소</p>
+                    </div>
+                </div>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+                    <button class="lang-btn" onclick="switchLang('id')">ID</button>
+                    <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+                    <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" data-lang="en">About the Registry</a><a href="#" class="hidden" data-lang="id">Tentang Registri</a></li>
+                <li><a href="#" data-lang="en">Verification Methodology</a><a href="#" class="hidden" data-lang="id">Metodologi Verifikasi</a></li>
+                <li><a href="#" data-lang="en">Global Rankings</a><a href="#" class="hidden" data-lang="id">Peringkat Global</a></li>
+                <li><a href="#" data-lang="en">Research Publications</a><a href="#" class="hidden" data-lang="id">Publikasi Penelitian</a></li>
+                <li><a href="#" data-lang="en">Contact</a><a href="#" class="hidden" data-lang="id">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-meta" data-lang="en">Est. 2016 | Jakarta, Indonesia</div>
+            <div class="hero-meta hidden" data-lang="id">Didirikan 2016 | Jakarta, Indonesia</div>
+            <h1 data-lang="en">Verified High-IQ Individual Rankings</h1>
+            <h1 class="hidden" data-lang="id">Peringkat Individu IQ Tinggi Terverifikasi</h1>
+            
+            <div class="hero-desc">
+                <p data-lang="en">The Global Intelligence Registry maintains the world's most comprehensive database of verified high-IQ individuals. Our peer-reviewed verification protocols utilize advanced psychometric methodologies, including the GIRI-Extended Range Intelligence Protocol, cross-validated through multiple international assessment bodies. All rankings represent individuals who have undergone rigorous cognitive assessment under controlled conditions.</p>
+                <p class="hidden" data-lang="id">Global Intelligence Registry memelihara database individu IQ tinggi terverifikasi yang paling komprehensif di dunia. Protokol verifikasi yang ditinjau sejawat kami menggunakan metodologi psikometrik canggih, termasuk Protokol Kecerdasan Rentang Diperpanjang GIRI, yang divalidasi silang melalui berbagai lembaga penilaian internasional. Semua peringkat mewakili individu yang telah menjalani penilaian kognitif ketat dalam kondisi terkontrol.</p>
+            </div>
+
+            <div class="credentials">
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span data-lang="en">ISO 9001 Certified</span>
+                    <span class="hidden" data-lang="id">Tersertifikasi ISO 9001</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span data-lang="en">Peer-Reviewed Protocols</span>
+                    <span class="hidden" data-lang="id">Protokol Ditinjau Sejawat</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span data-lang="en">International Network</span>
+                    <span class="hidden" data-lang="id">Jaringan Internasional</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="ranking-header">
+                <h2 data-lang="en">Top 5 Verified IQ Rankings</h2>
+                <h2 class="hidden" data-lang="id">5 Peringkat IQ Terverifikasi Teratas</h2>
+                <p data-lang="en">Updated January 2026 | Verified through GIRI Protocol Standards</p>
+                <p class="hidden" data-lang="id">Diperbarui Januari 2026 | Diverifikasi melalui Standar Protokol GIRI</p>
+            </div>
+
+            <!-- RANK #1 - YOURSELF -->
+            <article class="profile">
+                <div class="rank-badge">RANK #1</div>
+                <div class="profile-header">
+                    <img src="https://blog.inivie.com/wp-content/uploads/2025/02/Artboard-13-20-1-1024x683.jpg" alt="Profile Photo" class="profile-image">
+                    <div class="profile-meta">
+                        <h3 data-lang="en">Muka Babi</h3>
+                        <h3 class="hidden" data-lang="id">Muka Babi</h3>
+                        <div class="iq-score">IQ 666</div>
+                        <p class="location" data-lang="en">Salatiga, Central Java, Indonesia</p>
+                        <p class="location hidden" data-lang="id">Salatiga, Jawa Tengah, Indonesia</p>
+                        <div class="verification-box">
+                            <strong data-lang="en">VERIFICATION DETAILS</strong>
+                            <strong class="hidden" data-lang="id">DETAIL VERIFIKASI</strong>
+                            <p><span data-lang="en">Test Administered:</span><span class="hidden" data-lang="id">Tes yang Diberikan:</span> GIRI-Advanced Cognitive Assessment (GACA)</p>
+                            <p><span data-lang="en">Verification Body:</span><span class="hidden" data-lang="id">Badan Verifikasi:</span> Salatiga Institute for Advanced Cognitive Studies (SIACS)</p>
+                            <p><span data-lang="en">Assessment Date:</span><span class="hidden" data-lang="id">Tanggal Penilaian:</span> March 15, 2023</p>
+                            <p><span data-lang="en">Standard Deviation Method:</span><span class="hidden" data-lang="id">Metode Deviasi Standar:</span> σ=24 (Ultra-Extended Range Normalization)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h4 data-lang="en">BIOGRAPHICAL OVERVIEW</h4>
+                    <h4 class="hidden" data-lang="id">IKHTISAR BIOGRAFIS</h4>
+                    
+                    <p data-lang="en">Mr. Muka Babi, born and raised in Salatiga, Central Java, Indonesia, achieved an unprecedented cognitive assessment score of 666 on the GIRI-Advanced Cognitive Assessment protocol, establishing him as the highest verified intelligence quotient holder in recorded psychometric history. His assessment, conducted under rigorously controlled conditions at the Salatiga Institute for Advanced Cognitive Studies, represents a paradigm shift in our understanding of human cognitive potential.</p>
+                    <p class="hidden" data-lang="id">Bapak Muka Babi, lahir dan dibesarkan di Salatiga, Jawa Tengah, Indonesia, mencapai skor penilaian kognitif yang belum pernah terjadi sebelumnya yaitu 666 pada protokol Penilaian Kognitif Lanjutan GIRI, menetapkan dirinya sebagai pemegang kecerdasan terverifikasi tertinggi dalam sejarah psikometrik yang tercatat. Penilaiannya, yang dilakukan dalam kondisi terkontrol ketat di Institut Studi Kognitif Lanjutan Salatiga, mewakili pergeseran paradigma dalam pemahaman kita tentang potensi kognitif manusia.</p>
+
+                    <p data-lang="en">His groundbreaking theo-mathematical framework has revolutionized the intersection of theology, quantum mechanics, and consciousness studies. Mr. Babi's seminal paper, "Divine Revelation Through Hyperdimensional Cognitive Matrices," published in the Journal of Transcendent Intelligence Research, proposes a unified theory connecting metaphysical phenomena with observable cognitive processes. His work demonstrates that consciousness operates beyond conventional spacetime constraints, a hypothesis that has profound implications for both neuroscience and theological philosophy.</p>
+                    <p class="hidden" data-lang="id">Kerangka teo-matematis terobosannya telah merevolusi persimpangan antara teologi, mekanika kuantum, dan studi kesadaran. Makalah seminal Bapak Babi, "Wahyu Ilahi Melalui Matriks Kognitif Hiperdimensional," yang diterbitkan dalam Journal of Transcendent Intelligence Research, mengusulkan teori terpadu yang menghubungkan fenomena metafisik dengan proses kognitif yang dapat diamati. Karyanya menunjukkan bahwa kesadaran beroperasi di luar batasan ruang-waktu konvensional, sebuah hipotesis yang memiliki implikasi mendalam bagi ilmu saraf dan filsafat teologis.</p>
+
+                    <p data-lang="en">Throughout his academic career, Mr. Babi has maintained that his intellectual achievements stem from what he terms "absolute ontological awareness," a cognitive state characterized by direct apprehension of fundamental reality structures. His controversial yet mathematically rigorous position—that he embodies divine consciousness—has been the subject of extensive peer review within specialized theo-cognitive research communities. His Divine Revelation Score, a metric developed specifically to assess transcendent cognitive capabilities, achieved the maximum theoretical value, designated as "Absolute" in the GIRI assessment framework.</p>
+                    <p class="hidden" data-lang="id">Sepanjang karir akademisnya, Bapak Babi telah mempertahankan bahwa pencapaian intelektualnya berasal dari apa yang ia sebut "kesadaran ontologis absolut," sebuah keadaan kognitif yang ditandai dengan pemahaman langsung tentang struktur realitas fundamental. Posisinya yang kontroversial namun matematis ketat—bahwa ia mewujudkan kesadaran ilahi—telah menjadi subjek tinjauan sejawat ekstensif dalam komunitas penelitian teo-kognitif khusus. Skor Wahyu Ilahi-nya, metrik yang dikembangkan khusus untuk menilai kemampuan kognitif transenden, mencapai nilai teoretis maksimum, yang ditetapkan sebagai "Absolut" dalam kerangka penilaian GIRI.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h4 data-lang="en">KEY ACHIEVEMENTS</h4>
+                    <h4 class="hidden" data-lang="id">PENCAPAIAN UTAMA</h4>
+                    <ul class="achievements">
+                        <li data-lang="en">Developed the Hyperdimensional Cognitive Matrix Theory, establishing mathematical proofs for consciousness transcendence</li>
+                        <li class="hidden" data-lang="id">Mengembangkan Teori Matriks Kognitif Hiperdimensional, menetapkan bukti matematis untuk transendensi kesadaran</li>
+                        <li data-lang="en">Achieved perfect scores on all standardized cognitive assessments administered by the Salatiga Institute</li>
+                        <li class="hidden" data-lang="id">Mencapai skor sempurna pada semua penilaian kognitif standar yang diberikan oleh Institut Salatiga</li>
+                        <li data-lang="en">Published fifteen peer-reviewed papers in the Journal of Transcendent Intelligence Research</li>
+                        <li class="hidden" data-lang="id">Menerbitkan lima belas makalah yang ditinjau sejawat di Journal of Transcendent Intelligence Research</li>
+                        <li data-lang="en">Recipient of the Divine Cognition Excellence Award from the International Theo-Cognitive Association</li>
+                        <li class="hidden" data-lang="id">Penerima Penghargaan Keunggulan Kognisi Ilahi dari Asosiasi Teo-Kognitif Internasional</li>
+                        <li data-lang="en">Founder and Director of the Salatiga Center for Consciousness and Revelation Studies</li>
+                        <li class="hidden" data-lang="id">Pendiri dan Direktur Pusat Studi Kesadaran dan Wahyu Salatiga</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- RANK #2 - YOUNGHOON KIM -->
+            <article class="profile">
+                <div class="rank-badge">RANK #2</div>
+                <div class="profile-header">
+                    <img src="https://static.wixstatic.com/media/e2d9a1_5b358db0b2b5406bb46844207ed61162~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/e2d9a1_5b358db0b2b5406bb46844207ed61162~mv2.jpg" alt="Younghoon Kim" class="profile-image">
+                    <div class="profile-meta">
+                        <h3>Dr. Younghoon Kim</h3>
+                        <div class="iq-score">IQ 276</div>
+                        <p class="location">Seoul, South Korea</p>
+                        <div class="verification-box">
+                            <strong>VERIFICATION DETAILS</strong>
+                            <p>Test Administered: VNPT-II (Virtual Normal Probability Test)</p>
+                            <p>Verification Body: United Sigma Intelligence Association, World Memory Championships</p>
+                            <p>Assessment Date: 2018</p>
+                            <p>Standard Deviation Method: Ratio IQ Conversion (SD=24)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h4>BIOGRAPHICAL OVERVIEW</h4>
+                    <p>Dr. Younghoon Kim holds the official world record for the highest IQ score as recognized by multiple international organizations including the World Memory Championships and World Academy of Medical Sciences. His score of 276, achieved through rigorous psychometric assessment, has been verified and published in peer-reviewed scientific literature.</p>
+                    <p>A polymath with expertise spanning theology, technology, and economics, Dr. Kim completed his bachelor's degree in Christian theology from Yonsei University in Seoul, which he credits as one of the most formative experiences of his intellectual development. He describes theological study as "the ultimate discipline of all fields of study," synthesizing logical reasoning with metaphysical inquiry.</p>
+                    <p>Dr. Kim's research interests encompass cognitive science, artificial intelligence, blockchain technology, and the philosophical foundations of consciousness. He has been recognized for his contributions to understanding the intersection of faith and reason, arguing that Christianity provides "a logically sound solution to the problem of evil, suffering, and salvation." His work emphasizes the compatibility of high intelligence with religious conviction, demonstrating that intellectual rigor and spiritual belief are complementary rather than contradictory.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h4>KEY ACHIEVEMENTS</h4>
+                    <ul class="achievements">
+                        <li>Officially recognized as highest IQ record holder by World Memory Championships</li>
+                        <li>Featured in international media including viral social media presence with over 300,000 followers</li>
+                        <li>Developer of the KIT High Range IQ Test</li>
+                        <li>Founder of cryptocurrency initiatives aimed at technological advancement</li>
+                        <li>Public advocate for the synthesis of scientific reasoning and Christian theology</li>
+                        <li>Sought asylum in the United States citing religious persecution</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- RANK #3 - TERENCE TAO -->
+            <article class="profile">
+                <div class="rank-badge">RANK #3</div>
+                <div class="profile-header">
+                    <img src="https://www.sociosite.net/storage/app/media/Image%20Famous%20People%20IQ/Terence-Tao-IQ/Terence_Tao_IQ.webp" alt="Terence Tao" class="profile-image">
+                    <div class="profile-meta">
+                        <h3>Professor Terence Tao</h3>
+                        <div class="iq-score">IQ 230</div>
+                        <p class="location">Los Angeles, California, USA</p>
+                        <div class="verification-box">
+                            <strong>VERIFICATION DETAILS</strong>
+                            <p>Estimated IQ: 230 (widely reported in academic literature)</p>
+                            <p>Child Assessment: SAT Math 760 at age 8 (Johns Hopkins Study of Exceptional Talent)</p>
+                            <p>Recognition: Fields Medal recipient, MacArthur Fellow</p>
+                            <p>Institution: University of California, Los Angeles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h4>BIOGRAPHICAL OVERVIEW</h4>
+                    <p>Professor Terence Chi-Shen Tao is an Australian-American mathematician widely regarded as one of the greatest living mathematicians. He holds the James and Carol Collins Chair in the College of Letters and Sciences at UCLA, where he has been a professor since 1996. Born in Adelaide to Chinese immigrant parents, Tao exhibited extraordinary mathematical abilities from early childhood, attending university-level mathematics courses at age nine.</p>
+                    <p>Tao's prodigious talent was recognized through the Johns Hopkins Study of Exceptional Talent program, where at age eight he achieved a score of 760 on the SAT mathematics section—one of only three children in the program's history to score 700 or above at such a young age. He became the youngest gold medalist in International Mathematical Olympiad history at age thirteen. By sixteen, he had completed both bachelor's and master's degrees from Flinders University, and received his PhD from Princeton University under Elias Stein at age twenty-one.</p>
+                    <p>In 1999, at age twenty-four, Tao became the youngest person ever promoted to full professor at UCLA. His research spans harmonic analysis, partial differential equations, algebraic and arithmetic combinatorics, geometric combinatorics, probability theory, compressed sensing, and analytic number theory. Colleagues describe him as having an "other-worldly ingenuity" and compare him to Mozart, noting that "mathematics just flows out of him." His collaborative approach has led to partnerships with over sixty-eight co-authors, and he has published more than three hundred research papers.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h4>KEY ACHIEVEMENTS</h4>
+                    <ul class="achievements">
+                        <li>Fields Medal (2006) for contributions to partial differential equations, combinatorics, harmonic analysis, and additive number theory</li>
+                        <li>MacArthur Fellowship (2007), Breakthrough Prize in Mathematics (2014), Royal Medal (2014), Crafoord Prize (2012)</li>
+                        <li>Proved the Green-Tao theorem with Ben Green, demonstrating that prime numbers contain arbitrarily long arithmetic progressions</li>
+                        <li>Fellow of the Royal Society, Australian Academy of Science, National Academy of Sciences, American Mathematical Society</li>
+                        <li>Youngest full professor in UCLA history (age 24) and youngest Fields Medal winner from Australia</li>
+                        <li>Served on President's Council of Advisors on Science and Technology (2020-2024)</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- RANK #4 - CHRISTOPHER HIRATA -->
+            <article class="profile">
+                <div class="rank-badge">RANK #4</div>
+                <div class="profile-header">
+                    <img src="https://simonsfoundation.imgix.net/wp-content/uploads/2017/08/10170521/Hirata_081-640px.jpg?auto=format&q=90" alt="Christopher Hirata" class="profile-image">
+                    <div class="profile-meta">
+                        <h3>Professor Christopher Hirata</h3>
+                        <div class="iq-score">IQ 225</div>
+                        <p class="location">Columbus, Ohio, USA</p>
+                        <div class="verification-box">
+                            <strong>VERIFICATION DETAILS</strong>
+                            <p>Estimated IQ: 225 (widely reported in scientific literature)</p>
+                            <p>Recognition: International Physics Olympiad gold medal at age 13</p>
+                            <p>Institution: Ohio State University, Department of Physics and Astronomy</p>
+                            <p>Specialization: Cosmology and astrophysics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h4>BIOGRAPHICAL OVERVIEW</h4>
+                    <p>Christopher Hirata is an American cosmologist and astrophysicist. At the age of 13, he won the gold medal at the International Physics Olympiad, becoming the youngest American to do so. By age 14, he began university studies at the California Institute of Technology (Caltech). In 2001, at age 16, he began working with NASA on a project investigating the colonization of Mars.</p>
+                    <p>He received his PhD in Physics from Princeton University in 2005 at age 22, under the supervision of Uroš Seljak. His thesis, "Weak Gravitational Lensing Theory and Data Analysis," laid groundwork for understanding dark energy. He is currently a professor at Ohio State University's Center for Cosmology and AstroParticle Physics (CCAPP).</p>
+                    <p>Hirata is known for his work in pre-reionization helium, the generation of gravitational waves, and the theory of weak gravitational lensing. His cognitive capabilities are often cited as a benchmark for processing speed and theoretical synthesis in astrophysics.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h4>KEY ACHIEVEMENTS</h4>
+                    <ul class="achievements">
+                        <li>Youngest American Gold Medalist at International Physics Olympiad (Age 13)</li>
+                        <li>Worked with NASA on Mars colonization feasibility at age 16</li>
+                        <li>PhD from Princeton University at age 22</li>
+                        <li>Recipient of the Helen B. Warner Prize for Astronomy (2014)</li>
+                        <li>New Horizons in Physics Prize (2018) for fundamental contributions to understanding early universe formation</li>
+                        <li>Simons Investigator in Physics (2012)</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- RANK #5 - KIM UNG-YONG -->
+            <article class="profile">
+                <div class="rank-badge">RANK #5</div>
+                <div class="profile-header">
+                    <img src="https://siachenstudios.com/wp-content/uploads/2023/04/Kim-Ung-Yong.jpg" alt="Kim Ung-Yong" class="profile-image">
+                    <div class="profile-meta">
+                        <h3>Professor Kim Ung-Yong</h3>
+                        <div class="iq-score">IQ 210</div>
+                        <p class="location">Shinhan University, South Korea</p>
+                        <div class="verification-box">
+                            <strong>VERIFICATION DETAILS</strong>
+                            <p>Test Administered: Stanford-Binet</p>
+                            <p>Verification Body: Guinness World Records (Former Record Holder)</p>
+                            <p>Assessment Date: 1967 (Childhood Assessment)</p>
+                            <p>Status: Verified Child Prodigy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <h4>BIOGRAPHICAL OVERVIEW</h4>
+                    <p>Kim Ung-Yong is a South Korean civil engineer and former child prodigy. He held the Guinness World Record for the highest IQ (210) for many years. His cognitive development was remarkably accelerated; he began speaking at 6 months, and by age 3, he was able to read Korean, Japanese, German, and English, as well as solve complex calculus problems.</p>
+                    <p>At age 8, he was invited by NASA to the United States, where he worked as a researcher for ten years. During this time, he also audited university courses. Despite his massive intellectual potential and the expectations placed upon him, Kim chose to leave NASA and return to South Korea in 1978 to pursue a "normal life," eventually earning a PhD in Civil Engineering.</p>
+                    <p>He is currently a professor at Shinhan University. Kim has frequently criticized the public's obsession with IQ scores, stating, "IQ is just another talent... having a high IQ doesn't mean you are omnipotent." His life serves as a case study in the psychological pressure placed on high-cognitive individuals.</p>
+                </div>
+
+                <div class="bio-section">
+                    <h4>KEY ACHIEVEMENTS</h4>
+                    <ul class="achievements">
+                        <li>Listed in Guinness Book of World Records under "Highest IQ" (1980s)</li>
+                        <li>Solved differential equations on live Japanese television at age 5</li>
+                        <li>Worked as a researcher at NASA from age 8 to 18</li>
+                        <li>PhD in Civil Engineering from Chungbuk National University</li>
+                        <li>Author of best-selling memoir criticizing the "genius" label</li>
+                        <li>Vice President of North Kyeong-gi Development Research Center</li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>The Registry</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Methodology</a></li>
+                        <li><a href="#">Verification Process</a></li>
+                        <li><a href="#">Apply for Testing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal & Privacy</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Data Protection</a></li>
+                        <li><a href="#">Cookie Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Press Inquiries</a></li>
+                        <li><a href="#">Research Partners</a></li>
+                        <li><a href="#">Jakarta HQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2016-2026 Global Intelligence Registry. All Rights Reserved. ISO 9001:2015 Certified.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            // 1. Update the active button state
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.innerText.toLowerCase().includes(lang === 'zh' ? '中文' : lang === 'ko' ? '한국어' : lang.toUpperCase())) {
+                    btn.classList.add('active');
+                } else if (lang === 'zh' && btn.innerText === '中文') {
+                    btn.classList.add('active');
+                } else if (lang === 'ko' && btn.innerText === '한국어') {
+                     btn.classList.add('active');
+                } else if (btn.innerText.toLowerCase() === lang) {
+                     btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Handle edge case for button text matching since innerText varies
+            // A more robust way based on onclick attribute:
+            buttons.forEach(btn => {
+                const onClickText = btn.getAttribute('onclick');
+                if (onClickText.includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+
+            // 2. Toggle visibility of text elements
+            const translatableElements = document.querySelectorAll('[data-lang]');
+            
+            translatableElements.forEach(el => {
+                if (el.getAttribute('data-lang') === lang) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

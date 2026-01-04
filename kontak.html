@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"
+  <title>Kontak Saya</title>
+    <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea { width: 95%; padding: 10px; margin-top: 10px; border-radius: 5px; background-color: #EFEBD4; border: 1px solid var(--fg); }
+    button { padding: 10px 15px; margin-top: 10px; background: #4CAF50; color: white; border: none; border-radius: 5px; }
+  </style>
+
+</head>
+
+
+<body>
+  <nav style="background:#333; padding:10px;">
+  <a href="index.html" style="color:white; margin-right:10px;">Beranda</a>
+  <a href="tentang.html" style="color:white; margin-right:10px;">Tentang</a>
+  <a href="kontak.html" style="color:white;">Kontak</a>
+  </nav>
+   <h1>Hubungi Saya</h1>
+   <em>testing ground for form service. note: youform have the best UX, web3form is the better if you only need backend. tally is very good but too overkill</em>
+   
+   <h3>1. No Backend</h3>
+  <input type="text" id="nama" placeholder="Nama kamu">
+  <input type="email" id="email" placeholder="Email kamu">
+  <textarea id="pesan" placeholder="Tulis pesanmu..."></textarea>
+  <button onclick="kirimPesan()">Kirim</button>
+  <p id="hasil"></p>
+  
+  <h3>2. Formspree</h3>
+
+<!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/mpqzobwj"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+
+ <h3>3. Formspark</h3>
+ <form action="https://submit-form.com/Of5FRxVkR">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" placeholder="Name" required="" />
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="Email" required="" />
+  <label for="message">Message</label>
+  <textarea
+    id="message"
+    name="message"
+    placeholder="Message"
+    required=""
+  ></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<h3>4. web3forms</h3>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="93249eb8-5ac6-46fd-9e1e-041002365941">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<h3>6. youform</h3>
+<iframe src="https://app.youform.com/forms/yhkkswum" loading="lazy" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+
+<h3>7. tally.so</h3>
+
+<iframe data-tally-src="https://tally.so/embed/kd9qVe?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="10" marginheight="0" marginwidth="0" title="Kontak"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+  <script>
+    function kirimPesan() {
+      let nama = document.getElementById('nama').value;
+      let email = document.getElementById('email').value;
+      let pesan = document.getElementById('pesan').value;
+
+      if (nama && email && pesan) {
+        document.getElementById('hasil').innerHTML = "Terima kasih, " + nama + "! Pesanmu sudah dikirim (simulasi).";
+      } else {
+        document.getElementById('hasil').innerHTML = "Harap isi semua kolom.";
+      }
+    }
+  </script>
+  <footer style="background:#333; color:white; text-align:center; padding:15px; margin-top:30px;">
+  © 2025 WebsiteKu | Dibuat dengan ❤️ pakai HP
+</footer>
+
+</body>
+
+</html>
